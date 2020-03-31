@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import List from './components/List'
+import Bookmarks from './components/Bookmarks'
+import {
+  BrowserRouter,
+  Route
+} from "react-router-dom";
 
-function App() {
+
+
+
+
+const App = (props) => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <div className='wrapper'>
+        <Route path='/bookmarks' component={Bookmarks} />
+        <Route path='/list' component={List} />
+      </div>
+    </BrowserRouter>
+  )
 }
+
 
 export default App;
